@@ -1,0 +1,14 @@
+.degrade {
+    background: linear-gradient(170deg, #ff79da, #9356dc);
+    border: none;
+    color: white;
+    padding: 2vh 3vh;
+    margin: 5vh 0 9vh;
+    font-size: 2.5vh;
+    border-radius: 4vh;
+    @include box-shadow(map-get($ombres,Normales));
+    &:active{
+        opacity: 0.8;
+        @include box-shadow(map-get($ombres,Sombres));
+    }
+}

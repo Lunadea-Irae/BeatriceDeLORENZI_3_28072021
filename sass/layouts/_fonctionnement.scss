@@ -1,0 +1,39 @@
+.fonctionnement {
+    margin: 6vh 3vh;
+}
+
+ol {
+    list-style: none;
+    counter-reset: li;
+}
+
+li {
+    counter-increment: li;
+    font-weight: 500;
+    background-color: #f6f6f6;
+    margin: 0 0 24px -5vh;
+    border-radius: 4vh;
+    @include box-shadow(map-get($ombres,Claires));
+
+    &::before {
+        content: counter(li);
+        text-align: center;
+        color: white;
+        background-color: #9356dc;
+        display: inline-block;
+        width: 3.5vh;
+        height: 3vh;
+        margin-left: -1vh;
+        border-radius: 2vh;
+        padding-top: 0.4vh;
+        font-size: 2vh;
+    }
+    i {
+        margin: 4vh;
+        font-size: 3vh;
+        color: grey;
+    }
+    &:last-child i{
+        color: map-get($couleurs,Primaire);
+    }
+}
