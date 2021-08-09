@@ -1,3 +1,41 @@
-.restaurants{
-    background-color: map-get($couleurs, Fond );
+.restaurants {
+    background-color: map-get($couleurs, Fond);
+    padding: 3vh;
+    .resto {
+        background-color: white;
+        height: 36vh;
+        margin-bottom: 3vh;
+        border-radius: 2vh;
+        position: relative;
+        @include box-shadow(map-get($ombres,Claires));
+        .image {
+            object-fit: cover;
+            object-position: bottom;
+            height: 25vh;
+            width: 100%;
+            border-radius: 2vh 2vh 0 0;
+            &__imagecentree {
+                object-position: center;
+            }
+        }
+        &--nouveau::after {
+            content: "Nouveau";
+            position: absolute;
+            top: 2vh;
+            right: 2vh;
+            background-color: #99e2d0;
+            padding: 1vh 2vh;
+            color: darken(map-get($couleurs, Tertiaire), 40%);
+            font-weight: 500;
+            font-size: 2vh;
+        }
+    }
+    h3 {
+        margin: 2vh 0 0 2vh;
+    }
+    p {
+        margin-left: 2vh;
+        font-size: 2.5vh;
+        font-weight: 300;
+    }
 }

@@ -1,4 +1,17 @@
 * {
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: $police_normale;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.fa-heart{
+    font-family: "Font Awesome 5 Free";
+    position: absolute;
+    top: 29vh;
+    right: 4vh;
+    font-size: 4vh;
 }
