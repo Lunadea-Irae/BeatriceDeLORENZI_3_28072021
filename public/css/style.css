@@ -3,6 +3,11 @@
   font-family: "Roboto", sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 h2 {
   margin: 4vh 0;
   font-weight: 800;
@@ -12,7 +17,8 @@ h2 {
   background: linear-gradient(170deg, #ff79da, #9356dc);
   border: none;
   color: white;
-  padding: 2vh 3vh;
+  padding: 2vh 0;
+  width: 60%;
   margin: 5vh 0 9vh;
   font-size: 2.5vh;
   border-radius: 4vh;
@@ -65,8 +71,7 @@ ol {
   list-style: none;
   counter-reset: li;
 }
-
-li {
+ol li {
   counter-increment: li;
   font-weight: 500;
   background-color: #f6f6f6;
@@ -74,7 +79,7 @@ li {
   border-radius: 4vh;
   box-shadow: black 0 2px 16px -9px;
 }
-li::before {
+ol li::before {
   content: counter(li);
   text-align: center;
   color: white;
@@ -87,17 +92,176 @@ li::before {
   padding-top: 0.4vh;
   font-size: 2vh;
 }
-li i {
+ol li i {
   margin: 4vh;
   font-size: 3vh;
   color: grey;
 }
-li:last-child i {
+ol li:last-child i {
   color: #9356DC;
 }
 
-.restaurants {
+section {
   background-color: #f6f6f6;
+  padding: 3vh;
+}
+section .resto {
+  background-color: white;
+  height: 36vh;
+  margin-bottom: 3vh;
+  border-radius: 2vh;
+  position: relative;
+  box-shadow: black 0 2px 16px -9px;
+}
+section .resto .image {
+  object-fit: cover;
+  object-position: bottom;
+  height: 25vh;
+  width: 100%;
+  border-radius: 2vh 2vh 0 0;
+}
+section .resto .image__imagecentree {
+  object-position: center;
+}
+section .resto--nouveau::after {
+  content: "Nouveau";
+  position: absolute;
+  top: 2vh;
+  right: 2vh;
+  background-color: #99e2d0;
+  padding: 1vh 2vh;
+  color: #278870;
+  font-weight: 500;
+  font-size: 2vh;
+}
+section .resto .fa-heart {
+  font-family: "Font Awesome 5 Free";
+  position: absolute;
+  top: 29vh;
+  right: 4vh;
+  font-size: 4vh;
+}
+section .resto h3 {
+  margin: 2vh 0 0 2vh;
+}
+section .resto p {
+  margin-left: 2vh;
+  font-size: 2.5vh;
+  font-weight: 300;
+}
+
+footer {
+  background-color: #353535;
+  color: white;
+  padding: 5vh;
+}
+footer h2 {
+  font-family: "Shrikhand", cursive;
+  font-size: 2.7vh;
+  font-weight: 100;
+  margin: 0 0 3vh 0;
+}
+footer ul {
+  padding-inline-start: 0;
+}
+footer ul li {
+  display: block;
+  margin-bottom: 1vh;
+}
+footer a {
+  color: white;
+}
+footer a i {
+  font-weight: 900;
+  font-size: 2vh;
+  margin-right: 2vh;
+}
+
+.presentation_restaurant {
+  position: relative;
+}
+.presentation_restaurant img {
+  object-fit: cover;
+  height: 41vh;
+  width: 100%;
+}
+.presentation_restaurant h1 {
+  display: flex;
+  justify-content: space-around;
+  background-color: #f6f6f6;
+  position: absolute;
+  bottom: -5vh;
+  width: 100%;
+  padding: 4vh 0;
+  font-size: 4vh;
+  font-weight: 100;
+  font-family: "Shrikhand", cursive;
+  border-radius: 6vh 6vh 0 0;
+}
+
+.menu h2 {
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 2.5vh;
+  position: relative;
+}
+.menu h2::before {
+  content: "";
+  position: absolute;
+  bottom: -1vh;
+  left: 0;
+  height: 0px;
+  width: 6vh;
+  border-bottom: 3px solid #99E2D0;
+}
+.menu article {
+  background-color: white;
+  box-shadow: black 0 2px 16px -9px;
+  padding: 2vh;
+  padding-right: 0;
+  margin: 3vh 0;
+  border-radius: 2vh;
+  position: relative;
+}
+.menu article h3 {
+  font-size: 2.8vh;
+  font-weight: 600;
+  flex-basis: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu article p {
+  display: flex;
+  justify-content: space-between;
+}
+.menu article p .prix_plat {
+  margin: 0 3vh 0 1vh;
+  font-weight: 800;
+}
+.menu article p .description_plat {
+  font-size: 2.2vh;
+  flex-shrink: 2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu article p .fa-check-circle {
+  position: absolute;
+  font-weight: 900;
+  background: #99E2D0;
+  color: white;
+  width: 9vh;
+  top: 0;
+  right: 0;
+  height: 66%;
+  border-radius: 0 2vh 2vh 0;
+  font-size: 3vh;
+  text-align: center;
+  padding-top: 3.5vh;
+}
+
+.commander {
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */

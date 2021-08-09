@@ -1,4 +1,4 @@
-.restaurants {
+section {
     background-color: map-get($couleurs, Fond);
     padding: 3vh;
     .resto {
@@ -7,7 +7,7 @@
         margin-bottom: 3vh;
         border-radius: 2vh;
         position: relative;
-        @include box-shadow(map-get($ombres,Claires));
+        @include box-shadow(map-get($ombres, Claires));
         .image {
             object-fit: cover;
             object-position: bottom;
@@ -29,13 +29,21 @@
             font-weight: 500;
             font-size: 2vh;
         }
-    }
-    h3 {
-        margin: 2vh 0 0 2vh;
-    }
-    p {
-        margin-left: 2vh;
-        font-size: 2.5vh;
-        font-weight: 300;
+        .fa-heart {
+            font-family: "Font Awesome 5 Free";
+            position: absolute;
+            top: 29vh;
+            right: 4vh;
+            font-size: 4vh;
+        }
+
+        h3 {
+            margin: 2vh 0 0 2vh;
+        }
+        p {
+            margin-left: 2vh;
+            font-size: 2.5vh;
+            font-weight: 300;
+        }
     }
 }
