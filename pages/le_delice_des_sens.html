@@ -1,64 +1,107 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/a3a4d98ffa.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&family=Shrikhand&display=swap" rel="stylesheet">
-<link href="../public/css/style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&family=Shrikhand&display=swap"
+        rel="stylesheet">
+    <link href="../public/css/style.css" rel="stylesheet">
     <title>Le délice des sens</title>
 </head>
+
 <body>
-    <header><a href="../index.html"><i class="fas fa-arrow-left"></i></a><img src="../public/img/logo/ohmyfood@2x.svg" alt="Logo de ohmyfood"></header>
-    <div class="presentation_restaurant"><img src="../public/img/restaurants/le_delice_des_sens.jpg" alt="Apperçu d'une table du restaurant">
+    <header><a href="../index.html"><i class="fas fa-arrow-left"></i></a><img src="../public/img/logo/ohmyfood@2x.svg"
+            alt="Logo de ohmyfood"></header>
+    <div class="presentation_restaurant"><img src="../public/img/restaurants/le_delice_des_sens.jpg"
+            alt="Apperçu d'une table du restaurant">
         <h1>Le délice des sens<i class="far fa-heart"></i></h1>
     </div>
-   <section class="menu">
+    <section class="menu">
         <h2>Entrées</h2>
         <article>
             <h3>Tartare de thon</h3>
-            <p><span class="description_plat">Assaisonné au yuzu</span><span class="prix_plat">25€</span><i class="fas fa-check-circle"></i></p>
+            <p>
+                <span class="description_plat">Assaisonné au yuzu</span>
+                <span class="prix_plat">25€</span>
+                <i class="fas fa-check-circle"></i>
+                <input type="checkbox" class="plat_commande" value="tartare_de_thon">
+            </p>
         </article>
         <article>
             <h3>Bouchée de homard croustillant </h3>
-            <p><span class="description_plat">Et sa farandole de petits légumes</span><span class="prix_plat">35€</span><i class="fas fa-check-circle"></i></p>
+            <p>
+                <span class="description_plat">Et sa farandole de petits légumes</span>
+                <span class="prix_plat">35€</span>
+                <i class="fas fa-check-circle"></i>
+                <input type="checkbox" class="plat_commande" value="bouchee_de_homard_croustillant">
+            </p>
         </article>
         <article>
             <h3>Velouté de cèpes</h3>
-            <p><span class="description_plat">Aux truffes</span><span class="prix_plat">20€</span><i class="fas fa-check-circle"></i></p>
+            <p>
+                <span class="description_plat">Aux truffes</span>
+                <span class="prix_plat">20€</span><i class="fas fa-check-circle"></i>
+                <input type="checkbox" class="plat_commande" value="veloute_de_cepes">
+            </p>
         </article>
     </section>
-   <section class="menu">
+    <section class="menu">
         <h2>Plats</h2>
         <article>
             <h3>Poulet rôti aux herbes de Provence </h3>
-            <p><span class="description_plat">Et sa crème de truffe</span><span class="prix_plat">40€</span><i class="fas fa-check-circle"></i></p>
+            <p>
+                <span class="description_plat">Et sa crème de truffe</span>
+                <span class="prix_plat">40€</span><i class="fas fa-check-circle"></i>
+                <input type="checkbox" class="plat_commande" value="poulet_roti_aux_herbes_de_provence">
+            </p>
         </article>
         <article>
             <h3>Langouste rôtie</h3>
-            <p><span class="description_plat">Et ses légumes de saison</span><span class="prix_plat">35€</span><i class="fas fa-check-circle"></i></p>
+            <p>
+                <span class="description_plat">Et ses légumes de saison</span>
+                <span class="prix_plat">35€</span><i class="fas fa-check-circle"></i>
+                <input type="checkbox" class="plat_commande" value="langouste_rotie">
+            </p>
         </article>
         <article>
             <h3>Côte de boeuf Angus</h3>
-            <p><span class="description_plat">Et sa purée de panais</span><span class="prix_plat">44€</span><i class="fas fa-check-circle"></i></p>
+            <p>
+                <span class="description_plat">Et sa purée de panais</span>
+                <span class="prix_plat">44€</span><i class="fas fa-check-circle"></i>
+                <input type="checkbox" class="plat_commande" value="cote_de_boeuf_angus">
+            </p>
         </article>
     </section>
-   <section class="menu">
+    <section class="menu">
         <h2>Desserts</h2>
         <article>
             <h3>Farandole de desserts</h3>
-            <p><span class="description_plat">Du chef</span><span class="prix_plat">18€</span><i class="fas fa-check-circle"></i></p>
+            <p>
+                <span class="description_plat">Du chef</span>
+                <span class="prix_plat">18€</span><i class="fas fa-check-circle"></i>
+                <input type="checkbox" class="plat_commande" value="farandole_de_desserts">
+            </p>
         </article>
         <article>
             <h3>Crème brulée </h3>
-            <p><span class="description_plat">Revisitée</span><span class="prix_plat">22€</span><i class="fas fa-check-circle"></i></p>
+            <p>
+                <span class="description_plat">Revisitée</span>
+                <span class="prix_plat">22€</span><i class="fas fa-check-circle"></i>
+                <input type="checkbox" class="plat_commande" value="creme_brulee">
+            </p>
         </article>
         <article>
             <h3>Tiramisu</h3>
-            <p><span class="description_plat">À la noisette</span><span class="prix_plat">23€</span><i class="fas fa-check-circle"></i></p>
+            <p>
+                <span class="description_plat">À la noisette</span>
+                <span class="prix_plat">23€</span><i class="fas fa-check-circle"></i>
+                <input type="checkbox" class="plat_commande" value="tiramisu">
+            </p>
         </article>
     </section>
     <section class="commander"><button class="degrade">Commander</button></section>
@@ -72,4 +115,5 @@
         </ul>
     </footer>
 </body>
+
 </html>

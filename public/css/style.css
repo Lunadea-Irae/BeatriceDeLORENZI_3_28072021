@@ -8,6 +8,34 @@ a {
   color: black;
 }
 
+#accueil::after {
+  content: "";
+  animation: chargement 2s ease-in-out;
+  animation-fill-mode: forwards;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes chargement {
+  from {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+    left: 0;
+  }
+  to {
+    left: 3000px;
+  }
+}
 h2 {
   margin: 4vh 0;
   font-weight: 800;
@@ -27,6 +55,71 @@ h2 {
 .degrade:active {
   opacity: 0.8;
   box-shadow: black 0 10px 16px -9px;
+}
+
+.plat_commande {
+  width: 100%;
+  text-align: inherit;
+  border: none;
+  background-color: white;
+  box-shadow: black 0 2px 16px -9px;
+  padding: 2vh;
+  padding-right: 0;
+  margin: 3vh 0;
+  border-radius: 2vh;
+  position: relative;
+}
+.plat_commande h3 {
+  font-size: 2.8vh;
+  font-weight: 600;
+  flex-basis: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.plat_commande p {
+  display: flex;
+  justify-content: space-between;
+}
+.plat_commande p .prix_plat {
+  margin: 0 3vh 0 1vh;
+  font-weight: 800;
+}
+.plat_commande p .description_plat {
+  font-size: 2.2vh;
+  font-weight: 300;
+  flex-shrink: 2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.plat_commande .fa-check-circle {
+  position: absolute;
+  font-weight: 900;
+  background: #99E2D0;
+  color: white;
+  width: 0;
+  top: 0;
+  right: 0;
+  height: 66%;
+  border-radius: 0 2vh 2vh 0;
+  font-size: 3vh;
+  text-align: center;
+  padding-top: 3.5vh;
+}
+.plat_commande:not(:active) .fa-check-circle {
+  transition: width 1s step-end;
+}
+@keyframes animation-check-on {
+  from {
+    width: 9vh;
+  }
+  to {
+    width: 0;
+  }
+}
+.plat_commande:active .fa-check-circle {
+  width: 9vh;
+  transition: width 1s step-start;
 }
 
 header {
@@ -213,51 +306,6 @@ footer a i {
   height: 0px;
   width: 6vh;
   border-bottom: 3px solid #99E2D0;
-}
-.menu article {
-  background-color: white;
-  box-shadow: black 0 2px 16px -9px;
-  padding: 2vh;
-  padding-right: 0;
-  margin: 3vh 0;
-  border-radius: 2vh;
-  position: relative;
-}
-.menu article h3 {
-  font-size: 2.8vh;
-  font-weight: 600;
-  flex-basis: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.menu article p {
-  display: flex;
-  justify-content: space-between;
-}
-.menu article p .prix_plat {
-  margin: 0 3vh 0 1vh;
-  font-weight: 800;
-}
-.menu article p .description_plat {
-  font-size: 2.2vh;
-  flex-shrink: 2;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.menu article p .fa-check-circle {
-  position: absolute;
-  font-weight: 900;
-  background: #99E2D0;
-  color: white;
-  width: 9vh;
-  top: 0;
-  right: 0;
-  height: 66%;
-  border-radius: 0 2vh 2vh 0;
-  font-size: 3vh;
-  text-align: center;
-  padding-top: 3.5vh;
 }
 
 .commander {

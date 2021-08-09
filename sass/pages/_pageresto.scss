@@ -35,53 +35,7 @@
             border-bottom: 3px solid map-get($couleurs, Tertiaire);
         }
     }
-    article {
-        background-color: white;
-        @include box-shadow(map-get($ombres, Claires));
-        padding: 2vh;
-        padding-right: 0;
-        margin: 3vh 0;
-        border-radius: 2vh;
-        position: relative;
-        h3 {
-            font-size: 2.8vh;
-            font-weight: 600;
-            flex-basis: 100%;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        p {
-            display: flex;
-            justify-content: space-between;
-            .prix_plat {
-                margin: 0 3vh 0 1vh;
-                font-weight: 800;
-            }
-            .description_plat {
-                font-size: 2.2vh;
-                flex-shrink: 2;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-            .fa-check-circle {
-                position: absolute;
-                font-weight: 900;
-                background: map-get($couleurs, Tertiaire); 
-                color: white;
-                width: 9vh;
-                top: 0;
-                right: 0;
-                height: 66%;
-                border-radius: 0 2vh 2vh 0;
-                font-size: 3vh;
-                text-align: center;
-                padding-top: 3.5vh;
-            }
-        }
-    }
 }
-
 .commander {
     text-align: center;
 }
