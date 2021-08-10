@@ -1,3 +1,30 @@
+@mixin for-device($device) {
+    @media screen and (min-width: map-get($breakpoints, $device)) {
+        @content;
+    }
+}
+
+@mixin for-tablet-portrait-up {
+    @media (min-width: 600px) {
+        @content;
+    }
+}
+@mixin for-tablet-landscape-up {
+    @media (min-width: 900px) {
+        @content;
+    }
+}
+@mixin for-desktop-up {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
+@mixin for-big-desktop-up {
+    @media (min-width: 1800px) {
+        @content;
+    }
+}
+
 @mixin box-shadow($Yoffset) {
     box-shadow: black 0 $Yoffset 16px -9px;
 }
@@ -5,7 +32,6 @@
 @mixin fond_degrade {
     background: linear-gradient(170deg, map-get($couleurs, Secondaire), map-get($couleurs, Primaire));
 }
-
 
 @mixin animation_check_mixin($depart, $arrivee, $inout) {
     @keyframes animation-check-#{$inout} {
@@ -18,13 +44,12 @@
             $width: $arrivee;
         }
     }
-        @keyframes recalage-prix-#{$inout} {
-            from {
-                margin-right: calc(#{$depart} + 3vh);
-            }
-            to {
-                margin-right: calc(#{$arrivee} + 3vh);
-            }
+    @keyframes recalage-prix-#{$inout} {
+        from {
+            margin-right: calc(#{$depart} + 3vh);
         }
-        
+        to {
+            margin-right: calc(#{$arrivee} + 3vh);
+        }
     }
+}
