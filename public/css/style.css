@@ -387,7 +387,7 @@ footer a i {
 .menu article .fa-check-circle::before {
   white-space: nowrap;
   overflow: hidden;
-  transform: rotate(0turn);
+  transform: rotate(0deg);
   margin-top: -3vh;
 }
 .menu::after {
@@ -429,7 +429,7 @@ footer a i {
   animation: animation-check-in 300ms ease-in-out 1 forwards;
 }
 .plat_commande:checked ~ .fa-check-circle::before {
-  transform: rotate(1turn);
+  transform: rotate(360deg);
   transition: transform 300ms ease-in-out;
 }
 .plat_commande:checked + .prix_plat {
@@ -453,10 +453,6 @@ footer a i {
 }
 .plat_commande:not(:checked) ~ .fa-check-circle {
   animation: animation-check-out 300ms ease-in-out 1 forwards;
-}
-.plat_commande:not(:checked) ~ .fa-check-circle::before {
-  transform: rotate(1turn);
-  transition: transform 300ms ease-in-out;
 }
 .plat_commande:not(:checked) + .prix_plat {
   animation: recalage-prix-out 300ms ease-in-out 1 forwards;

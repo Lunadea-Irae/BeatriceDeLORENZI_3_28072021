@@ -107,7 +107,7 @@
             &::before {
                 white-space: nowrap;
                 overflow: hidden;
-                transform: rotate(0turn);
+                transform: rotate(0deg);
                 margin-top: -3vh;
             }
         }
@@ -139,7 +139,7 @@
         & ~ .fa-check-circle {
             animation: animation-check-in 300ms ease-in-out 1 forwards;
             &::before {
-                transform: rotate(1turn);
+                transform: rotate(360deg);
                 transition: transform 300ms ease-in-out;
             }
         }
@@ -152,10 +152,6 @@
         @include animation_check_mixin(9vh, 0, out);
         & ~ .fa-check-circle {
             animation: animation-check-out 300ms ease-in-out 1 forwards;
-            &::before {
-                transform: rotate(1turn);
-                transition: transform 300ms ease-in-out;
-            }
         }
 
         & + .prix_plat {
