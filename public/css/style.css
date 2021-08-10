@@ -43,7 +43,7 @@ a {
 .spinner .spinner__loader {
   width: 15vh;
   height: 15vh;
-  background: linear-gradient(170deg, #ff79da, #9356dc);
+  background: linear-gradient(170deg, #FF79DA, #9356DC);
   position: relative;
   border-radius: 8vh;
   transform: rotate(0deg);
@@ -78,7 +78,7 @@ h2 {
 }
 
 .degrade {
-  background: linear-gradient(170deg, #ff79da, #9356dc);
+  background: linear-gradient(170deg, #FF79DA, #9356DC);
   border: none;
   color: white;
   padding: 2vh 0;
@@ -93,69 +93,10 @@ h2 {
   box-shadow: black 0 10px 16px -9px;
 }
 
-.plat_commande {
-  width: 100%;
-  text-align: inherit;
-  border: none;
-  background-color: white;
-  box-shadow: black 0 2px 16px -9px;
-  padding: 2vh;
-  padding-right: 0;
-  margin: 3vh 0;
-  border-radius: 2vh;
-  position: relative;
-}
-.plat_commande h3 {
-  font-size: 2.8vh;
-  font-weight: 600;
-  flex-basis: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.plat_commande p {
-  display: flex;
-  justify-content: space-between;
-}
-.plat_commande p .prix_plat {
-  margin: 0 3vh 0 1vh;
-  font-weight: 800;
-}
-.plat_commande p .description_plat {
-  font-size: 2.2vh;
-  font-weight: 300;
-  flex-shrink: 2;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.plat_commande .fa-check-circle {
-  position: absolute;
-  font-weight: 900;
-  background: #99E2D0;
-  color: white;
-  width: 0;
-  top: 0;
-  right: 0;
-  height: 66%;
-  border-radius: 0 2vh 2vh 0;
-  font-size: 3vh;
-  text-align: center;
-  padding-top: 3.5vh;
-}
-.plat_commande:not(:active) .fa-check-circle {
-  transition: width 1s step-end;
-}
-@keyframes animation-check-on {
-  from {
-    width: 9vh;
-  }
-  to {
-    width: 0;
-  }
-}
-.plat_commande:active .fa-check-circle {
-  width: 9vh;
-  transition: width 1s step-start;
+.coeur {
+  background: linear-gradient(170deg, #FF79DA, #9356DC);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 header {
@@ -342,6 +283,90 @@ footer a i {
   height: 0px;
   width: 6vh;
   border-bottom: 3px solid #99E2D0;
+}
+
+article {
+  width: 100%;
+  text-align: inherit;
+  border: none;
+  background-color: white;
+  box-shadow: black 0 2px 16px -9px;
+  padding: 2vh;
+  padding-right: 0;
+  margin: 3vh 0;
+  border-radius: 2vh;
+  position: relative;
+}
+article label {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: -2vh;
+}
+article h3 {
+  font-size: 2.8vh;
+  font-weight: 600;
+  flex-basis: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+article p {
+  display: flex;
+  justify-content: space-between;
+}
+article p .prix_plat {
+  margin: 0 3vh 0 1vh;
+  font-weight: 800;
+}
+article p .description_plat {
+  font-size: 2.2vh;
+  font-weight: 300;
+  flex-shrink: 2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+article .fa-check-circle {
+  position: absolute;
+  font-weight: 900;
+  background: #99E2D0;
+  color: white;
+  width: 0;
+  top: 0;
+  right: 0;
+  height: 66%;
+  border-radius: 0 2vh 2vh 0;
+  font-size: 3vh;
+  text-align: center;
+  padding-top: 3.5vh;
+}
+article input[type=checkbox] {
+  display: none;
+}
+@keyframes animation-check-on {
+  from {
+    width: 0;
+  }
+  to {
+    width: 9vh;
+  }
+}
+article input[type=checkbox]:checked ~ .fa-check-circle {
+  animation: animation-check-on 300ms ease-in-out 1 forwards;
+}
+article input[type=checkbox]:checked:not(:checked) ~ .fa-check-circle {
+  animation: animation-check-on 300ms ease-in-out 1 reverse forwards;
+}
+article input[type=checkbox]:checked + .prix_plat {
+  animation: recalage-prix 300ms ease-in-out 1 forwards;
+}
+@keyframes recalage-prix {
+  from {
+    margin-right: 3vh;
+  }
+  to {
+    margin-right: 12vh;
+  }
 }
 
 .commander {

@@ -43,7 +43,7 @@ a {
     .spinner__loader {
         width: 15vh;
         height: 15vh;
-        background: linear-gradient(170deg, #ff79da, #9356dc);
+        @include fond_degrade;
         position: relative;
         border-radius: 8vh;
         
