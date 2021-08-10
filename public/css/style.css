@@ -321,7 +321,6 @@ article p .prix_plat {
 article p .description_plat {
   font-size: 2.2vh;
   font-weight: 300;
-  flex-shrink: 2;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -339,6 +338,15 @@ article .fa-check-circle {
   font-size: 3vh;
   text-align: center;
   padding-top: 3.5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+article .fa-check-circle::before {
+  white-space: nowrap;
+  overflow: hidden;
+  transform: rotate(0turn);
+  margin-top: -3vh;
 }
 article input[type=checkbox] {
   display: none;
@@ -353,6 +361,10 @@ article input[type=checkbox] {
 }
 article input[type=checkbox]:checked ~ .fa-check-circle {
   animation: animation-check-on 300ms ease-in-out 1 forwards;
+}
+article input[type=checkbox]:checked ~ .fa-check-circle::before {
+  transform: rotate(-1turn);
+  transition: transform 300ms ease-in-out;
 }
 article input[type=checkbox]:checked:not(:checked) ~ .fa-check-circle {
   animation: animation-check-on 300ms ease-in-out 1 reverse forwards;
