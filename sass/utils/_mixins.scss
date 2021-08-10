@@ -1,7 +1,30 @@
 @mixin box-shadow($Yoffset) {
-    box-shadow: black 0 $Yoffset 16px -9px;  
+    box-shadow: black 0 $Yoffset 16px -9px;
 }
 
 @mixin fond_degrade {
-    background: linear-gradient(170deg, map-get($couleurs,Secondaire), map-get($couleurs,Primaire));;
+    background: linear-gradient(170deg, map-get($couleurs, Secondaire), map-get($couleurs, Primaire));
 }
+
+
+@mixin animation_check_mixin($depart, $arrivee, $inout) {
+    @keyframes animation-check-#{$inout} {
+        from {
+            width: $depart;
+            $width: $depart;
+        }
+        to {
+            width: $arrivee;
+            $width: $arrivee;
+        }
+    }
+        @keyframes recalage-prix-#{$inout} {
+            from {
+                margin-right: calc(#{$depart} + 3vh);
+            }
+            to {
+                margin-right: calc(#{$arrivee} + 3vh);
+            }
+        }
+        
+    }

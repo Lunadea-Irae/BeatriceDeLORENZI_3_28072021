@@ -7,10 +7,13 @@ a {
     text-decoration: none;
     color: black;
 }
+input[type="checkbox"] {
+    display: none;
+}
 
 .spinner {
     content: "";
-    animation: chargement 2s ease-in-out;
+    animation: chargement 1.5s ease-in-out;
     animation-fill-mode: forwards;
     background-color: white;
     position: absolute;
@@ -33,7 +36,7 @@ a {
         99% {
             opacity: 0;
             left: 0;
-            top:0;
+            top: 0;
         }
         to {
             left: -3000px;
@@ -46,8 +49,8 @@ a {
         @include fond_degrade;
         position: relative;
         border-radius: 8vh;
-        
-transform: rotate(0deg);
+
+        transform: rotate(0deg);
         &::before {
             position: absolute;
             content: "";
@@ -67,9 +70,35 @@ transform: rotate(0deg);
         }
         animation: tourne 1s linear -100ms infinite normal;
         @keyframes tourne {
-            to{
-transform: rotate(360deg);
+            to {
+                transform: rotate(360deg);
             }
+        }
+    }
+}
+
+.fa-heart {
+    font-weight: 800;
+    @include fond_degrade;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 100% 0;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    -webkit-text-stroke: 1px black;
+}
+
+input[type="checkbox"].coeur:checked ~ label > i.fa-heart {
+    animation: remplit 2s ease-in-out 1 forwards;
+    @keyframes remplit {
+        from {
+            background-size: 100% 0;
+            font-weight: 800;
+        }
+        to {
+            background-size: 100% 100%;
+            font-weight: 800;
         }
     }
 }
