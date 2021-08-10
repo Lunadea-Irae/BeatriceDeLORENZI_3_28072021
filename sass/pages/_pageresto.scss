@@ -113,7 +113,7 @@ article {
             & ~ .fa-check-circle {
                 animation: animation-check-on 300ms ease-in-out 1 forwards;
                 &::before {
-                    transform: rotate(-1turn);
+                    transform: rotate(1turn);
                     transition: transform 300ms ease-in-out;
                 }
             }
