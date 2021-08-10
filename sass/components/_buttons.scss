@@ -1,7 +1,7 @@
 .degrade {
     @include fond_degrade;
     border: none;
-    color: white;
+    color: map-get($couleurs,Blanc);
     padding: 2vh 0;
     width: 60%;
     margin: 5vh 0 9vh;

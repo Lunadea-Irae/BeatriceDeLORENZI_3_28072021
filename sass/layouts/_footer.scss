@@ -1,6 +1,6 @@
 footer {
     background-color: #353535;
-    color: white;
+    color: map-get($couleurs,Blanc);
     padding: 5vh;
     h2 {
         font-family: $police_titres;
@@ -16,7 +16,7 @@ footer {
         }
     }
     a {
-        color: white;
+        color: map-get($couleurs,Blanc);
         i {
             font-weight: 900;
             font-size: 2vh;

@@ -1,8 +1,8 @@
-section {
+.restaurants {
     background-color: map-get($couleurs, Fond);
     padding: 3vh;
     .resto {
-        background-color: white;
+        background-color: map-get($couleurs,Blanc);
         height: 36vh;
         margin-bottom: 3vh;
         border-radius: 2vh;

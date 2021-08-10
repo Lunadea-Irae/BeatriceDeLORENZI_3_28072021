@@ -2,6 +2,8 @@
     margin: 0;
     font-family: $police_normale;
 }
+body{
+    background:map-get($map: $couleurs, $key:Fond );}
 
 a {
     text-decoration: none;
@@ -15,7 +17,7 @@ input[type="checkbox"] {
     content: "";
     animation: chargement 1.5s ease-in-out;
     animation-fill-mode: forwards;
-    background-color: white;
+    background-color: map-get($couleurs,Blanc);
     position: absolute;
     top: 0;
     left: 0;
@@ -56,7 +58,7 @@ input[type="checkbox"] {
             content: "";
             width: 7vh;
             height: 7vh;
-            background-color: white;
+            background-color: map-get($couleurs,Blanc);
         }
         &::after {
             content: "";
@@ -65,7 +67,7 @@ input[type="checkbox"] {
             height: 11vh;
             top: 2vh;
             left: 2vh;
-            background-color: white;
+            background-color: map-get($couleurs,Blanc);
             border-radius: 8vh;
         }
         animation: tourne 1s linear -100ms infinite normal;

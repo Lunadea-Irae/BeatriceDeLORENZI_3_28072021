@@ -1,5 +1,6 @@
 .fonctionnement {
-    margin: 6vh 3vh;
+    padding: 6vh 3vh;
+    background: map-get($couleurs,Blanc);
 }
 
 ol {
@@ -17,7 +18,7 @@ ol {
         &::before {
             content: counter(li);
             text-align: center;
-            color: white;
+            color: map-get($couleurs,Blanc);
             background-color: #9356dc;
             display: inline-block;
             width: 3.5vh;
