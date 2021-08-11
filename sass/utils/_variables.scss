@@ -1,11 +1,22 @@
-$couleurs:(Primaire:#9356DC,Secondaire:#FF79DA,Tertiaire:#99E2D0, Fond:#f6f6f6, Blanc:white);
+$couleurs:(
+    Primaire:#9356DC,
+    Secondaire:#FF79DA,
+    Tertiaire:#99E2D0, 
+    Fond:#f6f6f6, 
+    Blanc:white
+    );
 $police_titres:'Shrikhand', cursive;
 $police_normale: 'Roboto', sans-serif;
-$ombres:(Normales:5px,Sombres:10px,Claires:2px);
+$ombres:(
+    Normales:5px,
+    Sombres:10px,
+    Claires:2px
+    );
 $breakpoints: (
-    mobile: (min:0px,max:599px),
-    tablet-portrait-up:(min:600px,max:899px),
-    tablet-landscape-up:(min:900px,max:1199px),
-    desktop-up:(min:1200px,max:1799px),
-    big-desktop-up:(min:1800px,max:8000px)
+    //en px
+    mobile: (min:0,max:599),
+    tablet-portrait-up:(min:600,max:899),
+    tablet-landscape-up:(min:900,max:1199),
+    desktop-up:(min:1200,max:1799),
+    big-desktop-up:(min:1800,max:8000)
     );

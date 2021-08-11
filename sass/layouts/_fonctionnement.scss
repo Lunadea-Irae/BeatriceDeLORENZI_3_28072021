@@ -1,25 +1,78 @@
 .fonctionnement {
     padding: 6vh 3vh;
-    background: map-get($couleurs,Blanc);
+    background: map-get($couleurs, Blanc);
+    @include for-device(
+        $device_list: (
+            tablet-portrait-up,tablet-landscape-up, desktop-up, big-desktop-up
+        )
+    ) {
+        padding: 3vh;
+        position: relative;
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            @include fond_degrade;
+            width: 60%;
+            height: 0.3vh;
+            top: 0;
+            margin: 0 20% 0 17%;
+        }
+        &::after {
+            bottom: 0%;
+            top: auto;
+        }
+    }
 }
 
 ol {
     list-style: none;
     counter-reset: li;
+    @include for-device(
+        $device_list: (
+            tablet-portrait-up,tablet-landscape-up, desktop-up, big-desktop-up
+        )
+    ) {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 
     li {
         counter-increment: li;
+        font-size: 2.4vh;
         font-weight: 500;
-        background-color: #f6f6f6;
+        background-color: map-get($couleurs, Fond);
         margin: 0 0 24px -5vh;
         border-radius: 4vh;
         @include box-shadow(map-get($ombres, Claires));
 
+        @include for-device(
+            $device_list: (
+                tablet-portrait-up,tablet-landscape-up
+            )
+        ) {
+            font-size: 1.5vh;
+            margin-right: -1vh;
+            padding-right: 3vh;
+            flex-basis: 50%;
+        }
+        @include for-device(
+            $device_list: (
+                desktop-up, big-desktop-up
+            )
+        ) {
+            font-size: 1.5vh;
+            margin-right: -1vh;
+            padding-right: 3vh;
+            flex-basis: 25%;
+        }
+
         &::before {
             content: counter(li);
             text-align: center;
-            color: map-get($couleurs,Blanc);
-            background-color: #9356dc;
+            color: map-get($couleurs, Blanc);
+            background-color: map-get($couleurs, Primaire);
             display: inline-block;
             width: 3.5vh;
             height: 3vh;
@@ -27,11 +80,26 @@ ol {
             border-radius: 2vh;
             padding-top: 0.4vh;
             font-size: 2vh;
+            @include for-device(
+                $device_list: (
+                    tablet-portrait-up,tablet-landscape-up, desktop-up, big-desktop-up
+                )
+            ) {
+                font-size: 2vh;
+            }
         }
         i {
             margin: 4vh;
             font-size: 3vh;
             color: grey;
+            @include for-device(
+                $device_list: (
+                    tablet-portrait-up,tablet-landscape-up, desktop-up, big-desktop-up
+                )
+            ) {
+                margin: 2vh;
+                font-size: 2vh;
+            }
         }
         &:last-child i {
             color: map-get($couleurs, Primaire);

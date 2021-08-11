@@ -77,8 +77,9 @@
             justify-content: space-between;
             .prix_plat {
                 margin: 0 3vh 0 1vh;
+                font-size: 2.4vh;
                 font-weight: 800;
-                animation: none;
+                transform: translateX(0);
             }
             .description_plat {
                 font-size: 2.2vh;
@@ -119,14 +120,16 @@
         left: 0;
         width: 100%;
         height: 91%;
-        background: map-get($map: $couleurs, $key: Fond );
+        transform: scaleY(1);
+        transform-origin: bottom;
+        background: map-get($map: $couleurs, $key: Fond);
         animation: fondu-menus 1s ease 1 forwards;
         @keyframes fondu-menus {
             from {
-                height: 91%
+                transform: scaleY(1);
             }
             to {
-                height: 0%;
+                transform: scaleY(0);
             }
         }
     }
@@ -139,13 +142,12 @@
         & ~ .fa-check-circle {
             animation: animation-check-in 300ms ease-in-out 1 forwards;
             &::before {
-                transform: rotate(360deg);
-                transition: transform 300ms ease-in-out;
+                @include transition-standard(rotate(360deg));
             }
         }
 
         & + .prix_plat {
-            animation: recalage-prix-in 300ms ease-in-out 1 forwards;
+            @include transition-standard(translateX(-9vh));
         }
     }
     &:not(:checked) {
@@ -155,9 +157,12 @@
         }
 
         & + .prix_plat {
-            animation: recalage-prix-out 300ms ease-in-out 1 forwards;
+            @include transition-standard(translateX(0));
         }
     }
+}
+
+@include for-device(desktop-up) {
 }
 
 .commander {

@@ -1,5 +1,5 @@
-@mixin for-device($device) {
-    @media screen and (min-width: map-get($breakpoints, $device,min)) and (max-width: map-get($breakpoints, $device,max)) {
+@mixin for-device($device_list) {
+    @media screen and (min-width: get-min-width($device_list)+px) and (max-width: get-max-width($device_list)+px) {
         @content;
     }
 }
@@ -16,19 +16,16 @@
     @keyframes animation-check-#{$inout} {
         from {
             width: $depart;
-            $width: $depart;
+            $width:$depart;
         }
         to {
             width: $arrivee;
-            $width: $arrivee;
+            $width:$arrivee;
         }
     }
-    @keyframes recalage-prix-#{$inout} {
-        from {
-            margin-right: calc(#{$depart} + 3vh);
-        }
-        to {
-            margin-right: calc(#{$arrivee} + 3vh);
-        }
-    }
+}
+
+@mixin transition-standard($type-et-valeur) {
+    transform: #{$type-et-valeur};
+    transition: transform 300ms ease-in-out;
 }

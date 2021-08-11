@@ -1,7 +1,11 @@
 footer {
-    background-color: #353535;
-    color: map-get($couleurs,Blanc);
+
+    background-color: darken(map-get($map: $couleurs, $key: Fond),75%);
+    color: map-get($couleurs, Blanc);
     padding: 5vh;
+    @include for-device($device_list:(tablet-portrait-up,tablet-landscape-up,desktop-up,big-desktop-up)){
+        text-align: center;
+    }
     h2 {
         font-family: $police_titres;
         font-size: 2.7vh;
@@ -10,13 +14,20 @@ footer {
     }
     ul {
         padding-inline-start: 0;
+        @include for-device($device_list:(desktop-up,big-desktop-up)){
+            display: flex;
+            justify-content: center;
+        }
+
         li {
             display: block;
             margin-bottom: 1vh;
+            font-size: 2.4vh;
+            flex-basis: 20%;
         }
     }
     a {
-        color: map-get($couleurs,Blanc);
+        color: map-get($couleurs, Blanc);
         i {
             font-weight: 900;
             font-size: 2vh;
