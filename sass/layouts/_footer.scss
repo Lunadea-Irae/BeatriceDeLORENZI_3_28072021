@@ -1,20 +1,49 @@
 footer {
-
-    background-color: darken(map-get($map: $couleurs, $key: Fond),75%);
+    background-color: darken(map-get($map: $couleurs, $key: Fond), 75%);
     color: map-get($couleurs, Blanc);
     padding: 5vh;
-    @include for-device($device_list:(tablet-portrait-up,tablet-landscape-up,desktop-up,big-desktop-up)){
+    @include for-device(
+        $device_list: (
+            tablet-portrait-up,
+            tablet-landscape-up,
+            desktop-up,
+            big-desktop-up,
+        )
+    ) {
         text-align: center;
+        @include for-device(
+            $device_list: (
+                desktop-up,
+                big-desktop-up,
+            )
+        ) {
+            padding: 1vh;
+        }
     }
+
     h2 {
         font-family: $police_titres;
         font-size: 2.7vh;
         font-weight: 100;
         margin: 0 0 3vh 0;
+
+        @include for-device(
+            $device_list: (
+                desktop-up,
+                big-desktop-up,
+            )
+        ) {
+            margin: 1vh;
+        }
     }
     ul {
         padding-inline-start: 0;
-        @include for-device($device_list:(desktop-up,big-desktop-up)){
+        @include for-device(
+            $device_list: (
+                desktop-up,
+                big-desktop-up,
+            )
+        ) {
             display: flex;
             justify-content: center;
         }
@@ -23,7 +52,16 @@ footer {
             display: block;
             margin-bottom: 1vh;
             font-size: 2.4vh;
-            flex-basis: 20%;
+
+            @include for-device(
+                $device_list: (
+                    desktop-up,
+                    big-desktop-up,
+                )
+            ) {
+                font-size: 2vh;
+                margin: 0 3vh;
+            }
         }
     }
     a {
@@ -32,6 +70,15 @@ footer {
             font-weight: 900;
             font-size: 2vh;
             margin-right: 2vh;
+
+            @include for-device(
+                $device_list: (
+                    desktop-up,
+                    big-desktop-up,
+                )
+            ) {
+                margin-right: 1vh;
+            }
         }
     }
 }

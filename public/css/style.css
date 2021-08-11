@@ -364,11 +364,21 @@ footer {
     text-align: center;
   }
 }
+@media screen and (min-width: 600px) and (max-width: 8000px) and (min-width: 1200px) and (max-width: 8000px) {
+  footer {
+    padding: 1vh;
+  }
+}
 footer h2 {
   font-family: "Shrikhand", cursive;
   font-size: 2.7vh;
   font-weight: 100;
   margin: 0 0 3vh 0;
+}
+@media screen and (min-width: 1200px) and (max-width: 8000px) {
+  footer h2 {
+    margin: 1vh;
+  }
 }
 footer ul {
   padding-inline-start: 0;
@@ -383,7 +393,12 @@ footer ul li {
   display: block;
   margin-bottom: 1vh;
   font-size: 2.4vh;
-  flex-basis: 20%;
+}
+@media screen and (min-width: 1200px) and (max-width: 8000px) {
+  footer ul li {
+    font-size: 2vh;
+    margin: 0 3vh;
+  }
 }
 footer a {
   color: white;
@@ -392,6 +407,11 @@ footer a i {
   font-weight: 900;
   font-size: 2vh;
   margin-right: 2vh;
+}
+@media screen and (min-width: 1200px) and (max-width: 8000px) {
+  footer a i {
+    margin-right: 1vh;
+  }
 }
 
 .presentation_restaurant {
