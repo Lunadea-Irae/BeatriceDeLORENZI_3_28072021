@@ -96,7 +96,7 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"].coeur:checked ~ label > i.fa-heart {
-    animation: remplit 2s ease-in-out 1 forwards;
+    animation: remplit 1s ease-in-out 1 forwards;
     @keyframes remplit {
         from {
             background-size: 100% 0;
@@ -117,7 +117,7 @@ input[type="checkbox"].coeur:checked ~ label > i.fa-heart {
 ) {
     input[type="checkbox"].coeur:checked ~ label > i.fa-heart,
     input[type="checkbox"].coeur:hover ~ label > i.fa-heart {
-        animation: remplit 2s ease-in-out 1 forwards;
+        animation: remplit 1s ease-in-out 1 forwards;
         @keyframes remplit {
             from {
                 background-size: 100% 0;
