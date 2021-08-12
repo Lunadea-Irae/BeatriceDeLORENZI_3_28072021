@@ -4,7 +4,8 @@
 }
 
 body {
-    background: map-get($map: $couleurs, $key: Fond);    
+    background: map-get($map: $couleurs, $key: Fond);
+    
 }
 
 a {
@@ -94,7 +95,7 @@ input[type="checkbox"] {
     cursor: pointer;
 }
 
-input[type="checkbox"].coeur:checked ~ label > i.fa-heart, input[type="checkbox"].coeur:hover ~ label > i.fa-heart {
+input[type="checkbox"].coeur:checked ~ label > i.fa-heart {
     animation: remplit 2s ease-in-out 1 forwards;
     @keyframes remplit {
         from {
@@ -104,6 +105,28 @@ input[type="checkbox"].coeur:checked ~ label > i.fa-heart, input[type="checkbox"
         to {
             background-size: 100% 100%;
             font-weight: 800;
+        }
+    }
+}
+
+@include for-device(
+    $device_list: (
+        desktop-up,
+        big-desktop-up,
+    )
+) {
+    input[type="checkbox"].coeur:checked ~ label > i.fa-heart,
+    input[type="checkbox"].coeur:hover ~ label > i.fa-heart {
+        animation: remplit 2s ease-in-out 1 forwards;
+        @keyframes remplit {
+            from {
+                background-size: 100% 0;
+                font-weight: 800;
+            }
+            to {
+                background-size: 100% 100%;
+                font-weight: 800;
+            }
         }
     }
 }

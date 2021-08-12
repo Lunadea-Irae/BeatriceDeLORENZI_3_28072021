@@ -93,7 +93,7 @@ input[type=checkbox] {
   cursor: pointer;
 }
 
-input[type=checkbox].coeur:checked ~ label > i.fa-heart, input[type=checkbox].coeur:hover ~ label > i.fa-heart {
+input[type=checkbox].coeur:checked ~ label > i.fa-heart {
   animation: remplit 2s ease-in-out 1 forwards;
 }
 @keyframes remplit {
@@ -107,6 +107,22 @@ input[type=checkbox].coeur:checked ~ label > i.fa-heart, input[type=checkbox].co
   }
 }
 
+@media screen and (min-width: 1200px) and (max-width: 8000px) {
+  input[type=checkbox].coeur:checked ~ label > i.fa-heart,
+input[type=checkbox].coeur:hover ~ label > i.fa-heart {
+    animation: remplit 2s ease-in-out 1 forwards;
+  }
+  @keyframes remplit {
+    from {
+      background-size: 100% 0;
+      font-weight: 800;
+    }
+    to {
+      background-size: 100% 100%;
+      font-weight: 800;
+    }
+  }
+}
 h2 {
   margin: 4vh 0;
   font-weight: 800;
