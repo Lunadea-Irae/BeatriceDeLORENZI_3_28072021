@@ -1,0 +1,148 @@
+.menu {
+    padding: 0 3vh;
+    position: relative;
+    @include for-device(
+        $device_list: (
+            desktop-up,
+            big-desktop-up,
+        )
+    ) {
+        width: 28%;
+        padding-top: 6vh;
+        &:nth-child(4),
+        &:nth-child(5) {
+            &::before {
+                content: "";
+                position: absolute;
+                top: 25%;
+                left: -1vh;
+                width: 2px;
+                height: 50%;
+                @include fond_degrade;
+            }
+        }
+    }
+    h2 {
+        text-transform: uppercase;
+        font-weight: 300;
+        font-size: 2.5vh;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: -1vh;
+            left: 0;
+            height: 0px;
+            width: 6vh;
+            border-bottom: 3px solid map-get($couleurs, Tertiaire);
+            @include for-device(
+                $device_list: (
+                    desktop-up,
+                    big-desktop-up,
+                )
+            ) {
+                left: 45%;
+                width: 10%;
+            }
+        }
+    }
+
+    article {
+        width: 100%;
+        text-align: inherit;
+        border: none;
+        background-color: map-get($couleurs, Blanc);
+        @include box-shadow(map-get($ombres, Claires));
+        padding: 2vh;
+        padding-right: 0;
+        border-radius: 2vh;
+        position: relative;
+        opacity: 0;
+        animation: apparition-des-menus 1s ease 1 forwards;
+        @keyframes apparition-des-menus {
+            from {
+                margin: 10vh 0;
+                opacity: 0;
+            }
+            to {
+                margin: 3vh 0;
+                opacity: 1;
+            }
+        }
+        label {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            margin: -2vh;
+            cursor: pointer;
+        }
+
+        h3 {
+            font-size: 2.8vh;
+            font-weight: 600;
+            flex-basis: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        p {
+            display: flex;
+            justify-content: space-between;
+            .prix_plat {
+                margin: 0 $margin-right-prix-plat 0 1vh;
+                font-size: 2.4vh;
+                font-weight: 800;
+                transform: translateX(0);
+            }
+            .description_plat {
+                font-size: 2.2vh;
+                font-weight: 300;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+        .fa-check-circle {
+            position: absolute;
+            font-weight: 900;
+            background: map-get($couleurs, Tertiaire);
+            color: map-get($couleurs, Blanc);
+            width: 0;
+            top: 0;
+            right: 0;
+            height: 66%;
+            border-radius: 0 2vh 2vh 0;
+            font-size: 3vh;
+            text-align: center;
+            padding-top: 3.5vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &::before {
+                white-space: nowrap;
+                overflow: hidden;
+                transform: rotate(0deg);
+                margin-top: -3vh;
+            }
+        }
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 100%;
+        height: 91%;
+        transform: scaleY(1);
+        transform-origin: bottom;
+        background: map-get($map: $couleurs, $key: Fond);
+        animation: fondu-menus 1s ease 1 forwards;
+        @keyframes fondu-menus {
+            from {
+                transform: scaleY(1);
+            }
+            to {
+                transform: scaleY(0);
+            }
+        }
+    }
+}

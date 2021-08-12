@@ -90,6 +90,7 @@ input[type=checkbox] {
   background-repeat: no-repeat;
   background-position: bottom;
   -webkit-text-stroke: 1px black;
+  cursor: pointer;
 }
 
 input[type=checkbox].coeur:checked ~ label > i.fa-heart, input[type=checkbox].coeur:hover ~ label > i.fa-heart {
@@ -130,6 +131,7 @@ h2 {
   margin: 5vh 0 9vh;
   font-size: 2.5vh;
   border-radius: 4vh;
+  cursor: pointer;
   box-shadow: black 0 5px 16px -9px;
 }
 .degrade:active {
@@ -414,6 +416,18 @@ footer a i {
   }
 }
 
+@media screen and (min-width: 1200px) and (max-width: 8000px) {
+  body.page-resto {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+  body.page-resto header, body.page-resto .presentation_restaurant, body.page-resto .commander, body.page-resto footer {
+    flex-basis: 100%;
+  }
+}
+
 .presentation_restaurant {
   position: relative;
 }
@@ -421,6 +435,11 @@ footer a i {
   object-fit: cover;
   height: 41vh;
   width: 100%;
+}
+@media screen and (min-width: 1200px) and (max-width: 8000px) {
+  .presentation_restaurant img {
+    border-radius: 0 0 10vh 10vh;
+  }
 }
 .presentation_restaurant h1 {
   display: flex;
@@ -435,10 +454,113 @@ footer a i {
   font-family: "Shrikhand", cursive;
   border-radius: 6vh 6vh 0 0;
 }
+@media screen and (min-width: 1200px) and (max-width: 8000px) {
+  .presentation_restaurant h1 {
+    left: 33%;
+    width: 33%;
+    justify-content: space-evenly;
+  }
+}
 
+.commander {
+  text-align: center;
+}
+
+@keyframes animation-check-in {
+  from {
+    width: 0;
+  }
+  to {
+    width: 9vh;
+  }
+}
+@keyframes decalage-du-prix-in {
+  from {
+    margin-right: calc(0 + 3vh);
+  }
+  to {
+    margin-right: calc(9vh + 3vh);
+  }
+}
+.plat_commande:checked ~ .fa-check-circle {
+  animation: animation-check-in 300ms ease-in-out 1 forwards;
+}
+.plat_commande:checked ~ .fa-check-circle::before {
+  transform: rotate(360deg);
+  transition: transform 300ms ease-in-out;
+}
+.plat_commande:checked + .prix_plat {
+  animation: decalage-du-prix-in 300ms ease-in-out 1 forwards;
+}
+@keyframes animation-check-out {
+  from {
+    width: 9vh;
+  }
+  to {
+    width: 0;
+  }
+}
+@keyframes decalage-du-prix-out {
+  from {
+    margin-right: calc(9vh + 3vh);
+  }
+  to {
+    margin-right: calc(0 + 3vh);
+  }
+}
+.plat_commande:not(:checked) ~ .fa-check-circle {
+  animation: animation-check-out 300ms ease-in-out 1 forwards;
+}
+.plat_commande:not(:checked) + .prix_plat {
+  animation: decalage-du-prix-out 300ms ease-in-out 1 forwards;
+}
+
+@media screen and (min-width: 1200px) and (max-width: 8000px) {
+  @keyframes animation-check-in {
+    from {
+      width: 0;
+    }
+    to {
+      width: 9vh;
+    }
+  }
+  @keyframes decalage-du-prix-in {
+    from {
+      margin-right: calc(0 + 3vh);
+    }
+    to {
+      margin-right: calc(9vh + 3vh);
+    }
+  }
+  .menu article:hover p .prix_plat {
+    animation: decalage-du-prix-in 300ms ease-in-out 1 forwards;
+  }
+  .menu article:hover p .fa-check-circle {
+    animation: animation-check-in 300ms ease-in-out 1 forwards;
+  }
+  .menu article:hover p .fa-check-circle::before {
+    transform: rotate(360deg);
+    transition: transform 300ms ease-in-out;
+  }
+}
 .menu {
   padding: 0 3vh;
   position: relative;
+}
+@media screen and (min-width: 1200px) and (max-width: 8000px) {
+  .menu {
+    width: 28%;
+    padding-top: 6vh;
+  }
+  .menu:nth-child(4)::before, .menu:nth-child(5)::before {
+    content: "";
+    position: absolute;
+    top: 25%;
+    left: -1vh;
+    width: 2px;
+    height: 50%;
+    background: linear-gradient(170deg, #FF79DA, #9356DC);
+  }
 }
 .menu h2 {
   text-transform: uppercase;
@@ -455,6 +577,12 @@ footer a i {
   width: 6vh;
   border-bottom: 3px solid #99E2D0;
 }
+@media screen and (min-width: 1200px) and (max-width: 8000px) {
+  .menu h2::before {
+    left: 45%;
+    width: 10%;
+  }
+}
 .menu article {
   width: 100%;
   text-align: inherit;
@@ -465,14 +593,17 @@ footer a i {
   padding-right: 0;
   border-radius: 2vh;
   position: relative;
+  opacity: 0;
   animation: apparition-des-menus 1s ease 1 forwards;
 }
 @keyframes apparition-des-menus {
   from {
     margin: 10vh 0;
+    opacity: 0;
   }
   to {
     margin: 3vh 0;
+    opacity: 1;
   }
 }
 .menu article label {
@@ -480,6 +611,7 @@ footer a i {
   width: 100%;
   height: 100%;
   margin: -2vh;
+  cursor: pointer;
 }
 .menu article h3 {
   font-size: 2.8vh;
@@ -547,45 +679,6 @@ footer a i {
   to {
     transform: scaleY(0);
   }
-}
-
-@keyframes animation-check-in {
-  from {
-    width: 0;
-  }
-  to {
-    width: 9vh;
-  }
-}
-.plat_commande:checked ~ .fa-check-circle {
-  animation: animation-check-in 300ms ease-in-out 1 forwards;
-}
-.plat_commande:checked ~ .fa-check-circle::before {
-  transform: rotate(360deg);
-  transition: transform 300ms ease-in-out;
-}
-.plat_commande:checked + .prix_plat {
-  transform: translateX(-9vh);
-  transition: transform 300ms ease-in-out;
-}
-@keyframes animation-check-out {
-  from {
-    width: 9vh;
-  }
-  to {
-    width: 0;
-  }
-}
-.plat_commande:not(:checked) ~ .fa-check-circle {
-  animation: animation-check-out 300ms ease-in-out 1 forwards;
-}
-.plat_commande:not(:checked) + .prix_plat {
-  transform: translateX(0);
-  transition: transform 300ms ease-in-out;
-}
-
-.commander {
-  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */

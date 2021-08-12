@@ -1,14 +1,33 @@
+body.page-resto{
+    @include for-device($device_list:(desktop-up,big-desktop-up)){
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: stretch;
+header,.presentation_restaurant,.commander,footer{flex-basis: 100%;}
+    }
+}
+
+
 .presentation_restaurant {
     position: relative;
     img {
         object-fit: cover;
         height: 41vh;
         width: 100%;
+        @include for-device(
+            $device_list: (
+                desktop-up,
+                big-desktop-up,
+            )
+        ) {
+            border-radius: 0 0 10vh 10vh;
+        }
     }
     h1 {
         display: flex;
         justify-content: space-around;
-        background-color: #f6f6f6;
+        background-color: map-get($map: $couleurs, $key: Fond);
         position: absolute;
         bottom: -5vh;
         width: 100%;
@@ -17,152 +36,17 @@
         font-weight: 100;
         font-family: $police_titres;
         border-radius: 6vh 6vh 0 0;
-    }
-}
-.menu {
-    padding: 0 3vh;
-    position: relative;
-    h2 {
-        text-transform: uppercase;
-        font-weight: 300;
-        font-size: 2.5vh;
-        position: relative;
-        &::before {
-            content: "";
-            position: absolute;
-            bottom: -1vh;
-            left: 0;
-            height: 0px;
-            width: 6vh;
-            border-bottom: 3px solid map-get($couleurs, Tertiaire);
+        @include for-device(
+            $device_list: (
+                desktop-up,
+                big-desktop-up,
+            )
+        ) {
+            left: 33%;
+            width: 33%;
+            justify-content: space-evenly;
         }
     }
-
-    article {
-        width: 100%;
-        text-align: inherit;
-        border: none;
-        background-color: map-get($couleurs, Blanc);
-        @include box-shadow(map-get($ombres, Claires));
-        padding: 2vh;
-        padding-right: 0;
-        //margin: 3vh 0;
-        border-radius: 2vh;
-        position: relative;
-        animation: apparition-des-menus 1s ease 1 forwards;
-        @keyframes apparition-des-menus {
-            from {
-                margin: 10vh 0;
-            }
-            to {
-                margin: 3vh 0;
-            }
-        }
-        label {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            margin: -2vh;
-        }
-
-        h3 {
-            font-size: 2.8vh;
-            font-weight: 600;
-            flex-basis: 100%;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        p {
-            display: flex;
-            justify-content: space-between;
-            .prix_plat {
-                margin: 0 3vh 0 1vh;
-                font-size: 2.4vh;
-                font-weight: 800;
-                transform: translateX(0);
-            }
-            .description_plat {
-                font-size: 2.2vh;
-                font-weight: 300;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-        }
-        .fa-check-circle {
-            position: absolute;
-            font-weight: 900;
-            background: map-get($couleurs, Tertiaire);
-            color: map-get($couleurs, Blanc);
-            width: 0;
-            top: 0;
-            right: 0;
-            height: 66%;
-            border-radius: 0 2vh 2vh 0;
-            font-size: 3vh;
-            text-align: center;
-            padding-top: 3.5vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            &::before {
-                white-space: nowrap;
-                overflow: hidden;
-                transform: rotate(0deg);
-                margin-top: -3vh;
-            }
-        }
-    }
-    &::after {
-        content: "";
-        position: absolute;
-        bottom: -10px;
-        left: 0;
-        width: 100%;
-        height: 91%;
-        transform: scaleY(1);
-        transform-origin: bottom;
-        background: map-get($map: $couleurs, $key: Fond);
-        animation: fondu-menus 1s ease 1 forwards;
-        @keyframes fondu-menus {
-            from {
-                transform: scaleY(1);
-            }
-            to {
-                transform: scaleY(0);
-            }
-        }
-    }
-}
-
-.plat_commande {
-    &:checked {
-        @include animation_check_mixin(0, 9vh, in);
-
-        & ~ .fa-check-circle {
-            animation: animation-check-in 300ms ease-in-out 1 forwards;
-            &::before {
-                @include transition-standard(rotate(360deg));
-            }
-        }
-
-        & + .prix_plat {
-            @include transition-standard(translateX(-9vh));
-        }
-    }
-    &:not(:checked) {
-        @include animation_check_mixin(9vh, 0, out);
-        & ~ .fa-check-circle {
-            animation: animation-check-out 300ms ease-in-out 1 forwards;
-        }
-
-        & + .prix_plat {
-            @include transition-standard(translateX(0));
-        }
-    }
-}
-
-@include for-device(desktop-up) {
 }
 
 .commander {
