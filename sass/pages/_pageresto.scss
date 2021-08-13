@@ -1,13 +1,22 @@
-body.page-resto{
-    @include for-device($device_list:(desktop-up,big-desktop-up)){
+body.page-resto {
+    @include for-device(
+        $device_list: (
+            desktop-up,
+            big-desktop-up,
+        )
+    ) {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: stretch;
-header,.presentation_restaurant,.commander,footer{flex-basis: 100%;}
+        header,
+        .presentation_restaurant,
+        .commander,
+        footer {
+            flex-basis: 100%;
+        }
     }
 }
-
 
 .presentation_restaurant {
     position: relative;
@@ -49,6 +58,3 @@ header,.presentation_restaurant,.commander,footer{flex-basis: 100%;}
     }
 }
 
-.commander {
-    text-align: center;
-}

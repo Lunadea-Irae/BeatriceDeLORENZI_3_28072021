@@ -3,11 +3,17 @@ h2 {
     font-weight: 800;
     font-size: 3.6vh;
 
-    @include for-device($device_list:(tablet-portrait-up,tablet-landscape-up, desktop-up, big-desktop-up)){
-    margin: 0 0 2vh 0;
-    font-size: 2.6vh;
-    text-align: center;
-    flex-basis: 100%;
+    @include for-device(
+        $device_list: (
+            tablet-portrait-up,
+            tablet-landscape-up,
+            desktop-up,
+            big-desktop-up,
+        )
+    ) {
+        margin: 0 0 2vh 0;
+        font-size: 2.6vh;
+        text-align: center;
+        flex-basis: 100%;
     }
 }
-

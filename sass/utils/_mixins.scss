@@ -21,16 +21,7 @@
             width: $arrivee;
         }
     }
-    @keyframes decalage-du-prix-#{$inout} {
-        from {
-            margin-right: calc(#{$depart} + #{$margin-right-prix-plat});
-        }
-        to {
-            margin-right: calc(#{$arrivee} + #{$margin-right-prix-plat});
-        }
-    }
 }
-
 
 @mixin transition-standard($type-et-valeur) {
     transform: #{$type-et-valeur};

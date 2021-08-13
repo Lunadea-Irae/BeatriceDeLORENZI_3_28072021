@@ -2,23 +2,36 @@
     text-align: center;
     background-color: map-get($map: $couleurs, $key: Fond);
     p {
-        &:first-child {
+        margin: 0 1vh;
+        font-size: 2.5vh;
+        font-weight: 300;
+    }
+
+    form {
+        position: relative;
+        .fa-map-marker-alt {
+            position: absolute;
+        }
+        input {
+            text-align: center;
             padding: 2.4vh;
+            width: 100%;
             font-size: 2.4vh;
             background: darken(map-get($map: $couleurs, $key: Fond), 4%);
             box-shadow: inset 0px 10px 10px -14px;
-            @include for-device($device_list:(desktop-up, big-desktop-up)) {
-            width: 40%;
-            margin: 0 auto;
+            border: none;
+            @include for-device(
+                $device_list: (
+                    desktop-up,
+                    big-desktop-up,
+                )
+            ) {
+                width: 40%;
+                margin: 0 auto;
+            }
         }
-        }
-        &:nth-child(3) {
-            margin: 0 1vh;
-            font-size: 2.5vh;
-            font-weight: 300;
-        }
-        
     }
+
     h1 {
         margin: 6vh 6vh 1vh;
         font-size: 3.7vh;

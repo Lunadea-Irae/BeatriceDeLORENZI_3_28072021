@@ -1,19 +1,19 @@
-@function get-min-width($device_list){
-$min_width:8000;
-@each $device in $device_list {
-    @if map-get($breakpoints, $device,min)<$min_width{
-        $min_width:map-get($breakpoints, $device,min);
+@function get-min-width($device_list) {
+    $min_width: 8000;
+    @each $device in $device_list {
+        @if map-get($breakpoints, $device, min) <$min_width {
+            $min_width: map-get($breakpoints, $device, min);
+        }
     }
-}
-@return $min_width;
+    @return $min_width;
 }
 
-@function get-max-width($device_list){
-    $max_width:0;
+@function get-max-width($device_list) {
+    $max_width: 0;
     @each $device in $device_list {
-        @if map-get($breakpoints, $device,max)>$max_width{
-            $max_width:map-get($breakpoints, $device,max);
+        @if map-get($breakpoints, $device, max) >$max_width {
+            $max_width: map-get($breakpoints, $device, max);
         }
     }
     @return $max_width;
-    }
+}

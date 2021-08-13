@@ -1,7 +1,7 @@
 .degrade {
     @include fond_degrade;
     border: none;
-    color: map-get($couleurs,Blanc);
+    color: map-get($couleurs, Blanc);
     padding: 2vh 0;
     width: 60%;
     max-width: 550px;
@@ -15,4 +15,3 @@
         @include box-shadow(map-get($ombres, Sombres));
     }
 }
-

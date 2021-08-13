@@ -3,34 +3,26 @@
     background: map-get($couleurs, Blanc);
     @include for-device(
         $device_list: (
-            tablet-portrait-up,tablet-landscape-up, desktop-up, big-desktop-up
+            tablet-portrait-up,
+            tablet-landscape-up,
+            desktop-up,
+            big-desktop-up,
         )
     ) {
         padding: 3vh;
         position: relative;
-        &::before,
-        &::after {
-            content: "";
-            position: absolute;
-            @include fond_degrade;
-            width: 60%;
-            height: 0.3vh;
-            top: 0;
-            margin: 0 20% 0 17%;
-        }
-        &::after {
-            bottom: 0%;
-            top: auto;
-        }
     }
 }
 
 ol {
     list-style: none;
-    counter-reset: li;
+    counter-reset: numero-etape;
     @include for-device(
         $device_list: (
-            tablet-portrait-up,tablet-landscape-up, desktop-up, big-desktop-up
+            tablet-portrait-up,
+            tablet-landscape-up,
+            desktop-up,
+            big-desktop-up,
         )
     ) {
         display: flex;
@@ -39,7 +31,8 @@ ol {
     }
 
     li {
-        counter-increment: li;
+        position: relative;
+        counter-increment: numero-etape;
         font-size: 2.4vh;
         font-weight: 500;
         background-color: map-get($couleurs, Fond);
@@ -49,7 +42,8 @@ ol {
 
         @include for-device(
             $device_list: (
-                tablet-portrait-up,tablet-landscape-up
+                tablet-portrait-up,
+                tablet-landscape-up,
             )
         ) {
             font-size: 1.5vh;
@@ -59,7 +53,8 @@ ol {
         }
         @include for-device(
             $device_list: (
-                desktop-up, big-desktop-up
+                desktop-up,
+                big-desktop-up,
             )
         ) {
             font-size: 1.5vh;
@@ -69,7 +64,7 @@ ol {
         }
 
         &::before {
-            content: counter(li);
+            content: counter(numero-etape);
             text-align: center;
             color: map-get($couleurs, Blanc);
             background-color: map-get($couleurs, Primaire);
@@ -82,11 +77,24 @@ ol {
             font-size: 2vh;
             @include for-device(
                 $device_list: (
-                    tablet-portrait-up,tablet-landscape-up, desktop-up, big-desktop-up
+                    tablet-portrait-up,
+                    tablet-landscape-up,
+                    desktop-up,
+                    big-desktop-up,
                 )
             ) {
                 font-size: 2vh;
             }
+        }
+        &::after{
+            content: "";
+            position: absolute;
+            width:100%;
+            height: 100%;
+            left: 0;
+            border-radius: 2vh;
+            background-color: map-get($map: $couleurs, $key: Secondaire);
+            opacity: 0;
         }
         i {
             margin: 4vh;
@@ -94,15 +102,23 @@ ol {
             color: grey;
             @include for-device(
                 $device_list: (
-                    tablet-portrait-up,tablet-landscape-up, desktop-up, big-desktop-up
+                    tablet-portrait-up,
+                    tablet-landscape-up,
+                    desktop-up,
+                    big-desktop-up,
                 )
             ) {
                 margin: 2vh;
                 font-size: 2vh;
             }
         }
-        &:last-child i {
+        &:hover{
+             i {
             color: map-get($couleurs, Primaire);
+
         }
+    &::after{
+        opacity: 5%;
+    }}
     }
 }
