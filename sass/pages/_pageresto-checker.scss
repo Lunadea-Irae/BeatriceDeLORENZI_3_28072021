@@ -21,15 +21,14 @@
 
 @include for-device(
     $device_list: (
+        tablet-landscape-up,
         desktop-up,
         big-desktop-up,
     )
 ) {
-    .menu article:hover p {
+    .menu article:hover {
         @include animation_check_mixin(0, $dimension_du_check, in);
-        .prix_plat {
-            animation: decalage-du-prix-in 300ms ease-in-out 1 forwards;
-        }
+        
         .fa-check-circle {
             animation: animation-check-in 300ms ease-in-out 1 forwards;
             &::before {

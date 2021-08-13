@@ -3,37 +3,38 @@
     background-color: map-get($map: $couleurs, $key: Fond);
     p {
         margin: 0 1vh;
-        font-size: map-get($taille-de-base-txt,normale);
+        font-size: map-get($taille-de-base-txt, normale);
         font-weight: 300;
+        flex-basis: 100%;
     }
 
     form {
-        position: relative;
-        .fa-map-marker-alt {
-            position: absolute;
-        }
-        input {
-            text-align: center;
-            padding: 2.6vh;
-            width: 100%;
-            font-size: map-get($taille-de-base-txt,normale);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        div {
+            flex-basis: 100%;
             background: darken(map-get($map: $couleurs, $key: Fond), 4%);
             box-shadow: inset 0px 10px 10px -14px;
-            border: none;
-            @include for-device(
-                $device_list: (
-                    desktop-up,
-                    big-desktop-up,
-                )
-            ) {
-                width: 40%;
-                margin: 0 auto;
+            & > * {
+                color: darken(map-get($map: $couleurs, $key: Fond), 65%);
             }
+        }
+        .fa-map-marker-alt {
+            transform: translateX(5vh);
+        }
+        input {
+            padding: 2.6vh;
+            font-size: map-get($taille-de-base-txt, normale);
+            background: transparent;
+            border: none;
+            text-align: center;
         }
     }
 
     h1 {
         margin: 6vh 6vh 1vh;
-        font-size: map-get($taille-de-base-txt,titres);
+        font-size: map-get($taille-de-base-txt, titres);
+        flex-basis: 100%;
     }
 }

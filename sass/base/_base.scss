@@ -5,6 +5,8 @@
 
 body {
     background: map-get($map: $couleurs, $key: Fond);
+    max-width: 1700px;
+    margin: 0 auto;
 }
 
 a {

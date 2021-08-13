@@ -1,5 +1,16 @@
 form {
     text-align: center;
+    @include for-device(
+        $device_list: (
+            tablet-landscape-up,
+            desktop-up,
+            big-desktop-up,
+        )
+    ) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 .menu {
     padding: 0 3vh;
@@ -19,6 +30,15 @@ form {
         font-size: 1em;
         position: relative;
         text-align: start;
+        @include for-device(
+            $device_list: (
+                tablet-landscape-up,
+                desktop-up,
+                big-desktop-up,
+            )
+        ) {
+            text-align: center;
+        }
 
         &::before {
             content: "";
@@ -79,7 +99,7 @@ form {
             white-space: nowrap;
             flex-grow: 10;
             h3 {
-                font-size: 2.8vh;
+                font-size: 1.1em;
                 font-weight: 600;
                 overflow: hidden;
                 flex-basis: 100%;
@@ -87,7 +107,6 @@ form {
                 text-align: start;
             }
             .description_plat {
-                font-size: 2.2vh;
                 font-weight: 300;
                 overflow: hidden;
                 text-overflow: ellipsis;
@@ -96,7 +115,6 @@ form {
 
         .prix_plat {
             margin: 0 $margin-right-prix-plat 0 1vh;
-            font-size: 2.4vh;
             font-weight: 800;
             align-self: flex-end;
             text-align: end;

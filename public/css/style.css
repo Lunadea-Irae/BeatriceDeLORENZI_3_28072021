@@ -5,6 +5,8 @@
 
 body {
   background: #f6f6f6;
+  max-width: 1700px;
+  margin: 0 auto;
 }
 
 a {
@@ -125,7 +127,6 @@ h2 {
 @media screen and (min-width: 600px) and (max-width: 8000px) {
   h2 {
     margin: 0 0 2vh 0;
-    font-size: 2.6vh;
     text-align: center;
     flex-basis: 100%;
   }
@@ -173,31 +174,35 @@ header a {
   margin: 0 1vh;
   font-size: 1em;
   font-weight: 300;
+  flex-basis: 100%;
 }
 .explore form {
-  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.explore form .fa-map-marker-alt {
-  position: absolute;
-}
-.explore form input {
-  text-align: center;
-  padding: 2.6vh;
-  width: 100%;
-  font-size: 1em;
+.explore form div {
+  flex-basis: 100%;
   background: #ececec;
   box-shadow: inset 0px 10px 10px -14px;
-  border: none;
 }
-@media screen and (min-width: 1200px) and (max-width: 8000px) {
-  .explore form input {
-    width: 40%;
-    margin: 0 auto;
-  }
+.explore form div > * {
+  color: #505050;
+}
+.explore form .fa-map-marker-alt {
+  transform: translateX(5vh);
+}
+.explore form input {
+  padding: 2.6vh;
+  font-size: 1em;
+  background: transparent;
+  border: none;
+  text-align: center;
 }
 .explore h1 {
   margin: 6vh 6vh 1vh;
   font-size: 1.55em;
+  flex-basis: 100%;
 }
 
 .fonctionnement {
@@ -285,6 +290,11 @@ ol li i {
     font-size: 2vh;
   }
 }
+@media screen and (max-width: 330px) {
+  ol li i {
+    margin: 2vh;
+  }
+}
 ol li:hover i {
   color: #9356dc;
 }
@@ -310,7 +320,6 @@ ol li:hover::after {
 }
 .restaurants .resto {
   background-color: white;
-  height: 36vh;
   margin-bottom: 3vh;
   border-radius: 2vh;
   position: relative;
@@ -319,6 +328,11 @@ ol li:hover::after {
 @media screen and (min-width: 600px) and (max-width: 8000px) {
   .restaurants .resto {
     flex-basis: 23%;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 1199px) {
+  .restaurants .resto {
+    flex-basis: 45%;
   }
 }
 .restaurants .resto .image {
@@ -344,21 +358,19 @@ ol li:hover::after {
 .restaurants .resto .fa-heart {
   font-family: "Font Awesome 5 Free";
   position: absolute;
-  top: 28vh;
+  bottom: 3vh;
   right: 3vh;
   font-size: 2em;
 }
 .restaurants .resto h3 {
   margin: 2vh 0 0 2vh;
+  font-size: 1.2em;
 }
 .restaurants .resto p {
   margin-left: 2vh;
+  padding-bottom: 2vh;
   font-weight: 300;
-}
-@media screen and (min-width: 600px) and (max-width: 1199px) {
-  .restaurants .resto {
-    flex-basis: 45%;
-  }
+  font-size: 1.1em;
 }
 
 footer {
@@ -495,7 +507,7 @@ body.page-resto footer {
   animation: animation-check-out 300ms ease-in-out 1 forwards;
 }
 
-@media screen and (min-width: 1200px) and (max-width: 8000px) {
+@media screen and (min-width: 900px) and (max-width: 8000px) {
   @keyframes animation-check-in {
     from {
       width: 0;
@@ -504,19 +516,23 @@ body.page-resto footer {
       width: 9vh;
     }
   }
-  .menu article:hover p .prix_plat {
-    animation: decalage-du-prix-in 300ms ease-in-out 1 forwards;
-  }
-  .menu article:hover p .fa-check-circle {
+  .menu article:hover .fa-check-circle {
     animation: animation-check-in 300ms ease-in-out 1 forwards;
   }
-  .menu article:hover p .fa-check-circle::before {
+  .menu article:hover .fa-check-circle::before {
     transform: rotate(360deg);
     transition: transform 300ms ease-in-out;
   }
 }
 form {
   text-align: center;
+}
+@media screen and (min-width: 900px) and (max-width: 8000px) {
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 .menu {
@@ -535,6 +551,11 @@ form {
   font-size: 1em;
   position: relative;
   text-align: start;
+}
+@media screen and (min-width: 900px) and (max-width: 8000px) {
+  .menu h2 {
+    text-align: center;
+  }
 }
 .menu h2::before {
   content: "";
@@ -591,7 +612,7 @@ form {
   flex-grow: 10;
 }
 .menu article div h3 {
-  font-size: 2.8vh;
+  font-size: 1.1em;
   font-weight: 600;
   overflow: hidden;
   flex-basis: 100%;
@@ -599,14 +620,12 @@ form {
   text-align: start;
 }
 .menu article div .description_plat {
-  font-size: 2.2vh;
   font-weight: 300;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .menu article .prix_plat {
   margin: 0 3vh 0 1vh;
-  font-size: 2.4vh;
   font-weight: 800;
   align-self: flex-end;
   text-align: end;

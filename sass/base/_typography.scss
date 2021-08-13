@@ -1,7 +1,7 @@
 h2 {
     margin: 4vh 0;
     font-weight: 800;
-    font-size: map-get($map: $taille-de-base-txt, $key:titres );
+    font-size: map-get($taille-de-base-txt, titres);
 
     @include for-device(
         $device_list: (
@@ -12,7 +12,6 @@ h2 {
         )
     ) {
         margin: 0 0 2vh 0;
-        font-size: 2.6vh;
         text-align: center;
         flex-basis: 100%;
     }
