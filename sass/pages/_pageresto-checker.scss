@@ -1,10 +1,10 @@
 .plat_commande {
     &:checked {
-                @include animation_check_mixin(0, $dimension_du_check, in);
+        @include animation_check_mixin(0, $dimension_du_check, in);
 
         & ~ .fa-check-circle {
-                        animation: animation-check-in 300ms ease-in-out 1 forwards;
-            
+            animation: animation-check-in 300ms ease-in-out 1 forwards;
+
             &::before {
                 @include transition-standard(rotate(360deg));
             }
@@ -13,8 +13,7 @@
     &:not(:checked) {
         @include animation_check_mixin($dimension_du_check, 0, out);
         & ~ .fa-check-circle {
-                    animation: animation-check-out 300ms ease-in-out 1 forwards;
-
+            animation: animation-check-out 300ms ease-in-out 1 forwards;
         }
     }
 }
@@ -28,7 +27,7 @@
 ) {
     .menu article:hover {
         @include animation_check_mixin(0, $dimension_du_check, in);
-        
+
         .fa-check-circle {
             animation: animation-check-in 300ms ease-in-out 1 forwards;
             &::before {

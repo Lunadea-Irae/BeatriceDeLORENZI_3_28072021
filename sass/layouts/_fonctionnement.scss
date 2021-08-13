@@ -39,7 +39,6 @@ ol {
         margin: 0 0 24px -5vh;
         border-radius: 4vh;
         @include box-shadow(map-get($ombres, Claires));
-
         @include for-device(
             $device_list: (
                 tablet-portrait-up,
