@@ -120,7 +120,7 @@ input[type=checkbox].coeur:hover ~ label > i.fa-heart {
 h2 {
   margin: 4vh 0;
   font-weight: 800;
-  font-size: 3.6vh;
+  font-size: 1.55em;
 }
 @media screen and (min-width: 600px) and (max-width: 8000px) {
   h2 {
@@ -171,7 +171,7 @@ header a {
 }
 .explore p {
   margin: 0 1vh;
-  font-size: 2.5vh;
+  font-size: 1em;
   font-weight: 300;
 }
 .explore form {
@@ -182,9 +182,9 @@ header a {
 }
 .explore form input {
   text-align: center;
-  padding: 2.4vh;
+  padding: 2.6vh;
   width: 100%;
-  font-size: 2.4vh;
+  font-size: 1em;
   background: #ececec;
   box-shadow: inset 0px 10px 10px -14px;
   border: none;
@@ -197,7 +197,7 @@ header a {
 }
 .explore h1 {
   margin: 6vh 6vh 1vh;
-  font-size: 3.7vh;
+  font-size: 1.55em;
 }
 
 .fonctionnement {
@@ -225,7 +225,7 @@ ol {
 ol li {
   position: relative;
   counter-increment: numero-etape;
-  font-size: 2.4vh;
+  font-size: 1em;
   font-weight: 500;
   background-color: #f6f6f6;
   margin: 0 0 24px -5vh;
@@ -234,7 +234,6 @@ ol li {
 }
 @media screen and (min-width: 600px) and (max-width: 1199px) {
   ol li {
-    font-size: 1.5vh;
     margin-right: -1vh;
     padding-right: 3vh;
     flex-basis: 50%;
@@ -242,7 +241,6 @@ ol li {
 }
 @media screen and (min-width: 1200px) and (max-width: 8000px) {
   ol li {
-    font-size: 1.5vh;
     margin-right: -1vh;
     padding-right: 3vh;
     flex-basis: 25%;
@@ -254,12 +252,12 @@ ol li::before {
   color: white;
   background-color: #9356dc;
   display: inline-block;
-  width: 3.5vh;
+  width: 3.7vh;
   height: 3vh;
   margin-left: -1vh;
   border-radius: 2vh;
-  padding-top: 0.4vh;
-  font-size: 2vh;
+  padding-top: 0.7vh;
+  font-size: 0.8em;
 }
 @media screen and (min-width: 600px) and (max-width: 8000px) {
   ol li::before {
@@ -278,7 +276,7 @@ ol li::after {
 }
 ol li i {
   margin: 4vh;
-  font-size: 3vh;
+  font-size: 1em;
   color: grey;
 }
 @media screen and (min-width: 600px) and (max-width: 8000px) {
@@ -342,33 +340,20 @@ ol li:hover::after {
   padding: 1vh 2vh;
   color: #278870;
   font-weight: 500;
-  font-size: 2vh;
 }
 .restaurants .resto .fa-heart {
   font-family: "Font Awesome 5 Free";
   position: absolute;
-  top: 29vh;
-  right: 4vh;
-  font-size: 4vh;
+  top: 28vh;
+  right: 3vh;
+  font-size: 2em;
 }
 .restaurants .resto h3 {
   margin: 2vh 0 0 2vh;
-  font-size: 2.8vh;
-}
-@media screen and (min-width: 600px) and (max-width: 1199px) {
-  .restaurants .resto h3 {
-    font-size: 2.4vh;
-  }
 }
 .restaurants .resto p {
   margin-left: 2vh;
-  font-size: 2.5vh;
   font-weight: 300;
-}
-@media screen and (min-width: 600px) and (max-width: 1199px) {
-  .restaurants .resto p {
-    font-size: 2.2vh;
-  }
 }
 @media screen and (min-width: 600px) and (max-width: 1199px) {
   .restaurants .resto {
@@ -393,7 +378,7 @@ footer {
 }
 footer h2 {
   font-family: "Shrikhand", cursive;
-  font-size: 2.7vh;
+  font-size: 1.5em;
   font-weight: 100;
   margin: 0 0 3vh 0;
 }
@@ -414,11 +399,9 @@ footer ul {
 footer ul li {
   display: block;
   margin-bottom: 1vh;
-  font-size: 2.4vh;
 }
 @media screen and (min-width: 1200px) and (max-width: 8000px) {
   footer ul li {
-    font-size: 2vh;
     margin: 0 3vh;
   }
 }
@@ -427,7 +410,7 @@ footer a {
 }
 footer a i {
   font-weight: 900;
-  font-size: 2vh;
+  font-size: 0.8em;
   margin-right: 2vh;
 }
 @media screen and (min-width: 1200px) and (max-width: 8000px) {
@@ -549,7 +532,7 @@ form {
 .menu h2 {
   text-transform: uppercase;
   font-weight: 300;
-  font-size: 2.5vh;
+  font-size: 1em;
   position: relative;
   text-align: start;
 }

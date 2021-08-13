@@ -57,40 +57,21 @@
             padding: 1vh 2vh;
             color: darken(map-get($couleurs, Tertiaire), 40%);
             font-weight: 500;
-            font-size: 2vh;
         }
         .fa-heart {
             font-family: "Font Awesome 5 Free";
             position: absolute;
-            top: 29vh;
-            right: 4vh;
-            font-size: 4vh;
+            top: 28vh;
+            right: 3vh;
+            font-size: 2em;
         }
 
         h3 {
             margin: 2vh 0 0 2vh;
-            font-size: 2.8vh;
-            @include for-device(
-                $device_list: (
-                    tablet-portrait-up,
-                    tablet-landscape-up,
-                )
-            ) {
-                font-size: 2.4vh;
-            }
         }
         p {
             margin-left: 2vh;
-            font-size: 2.5vh;
             font-weight: 300;
-            @include for-device(
-                $device_list: (
-                    tablet-portrait-up,
-                    tablet-landscape-up,
-                )
-            ) {
-                font-size: 2.2vh;
-            }
         }
         @include for-device(
             $device_list: (

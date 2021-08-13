@@ -33,7 +33,7 @@ ol {
     li {
         position: relative;
         counter-increment: numero-etape;
-        font-size: 2.4vh;
+        font-size: map-get($taille-de-base-txt, normale );
         font-weight: 500;
         background-color: map-get($couleurs, Fond);
         margin: 0 0 24px -5vh;
@@ -46,7 +46,6 @@ ol {
                 tablet-landscape-up,
             )
         ) {
-            font-size: 1.5vh;
             margin-right: -1vh;
             padding-right: 3vh;
             flex-basis: 50%;
@@ -57,7 +56,6 @@ ol {
                 big-desktop-up,
             )
         ) {
-            font-size: 1.5vh;
             margin-right: -1vh;
             padding-right: 3vh;
             flex-basis: 25%;
@@ -69,12 +67,12 @@ ol {
             color: map-get($couleurs, Blanc);
             background-color: map-get($couleurs, Primaire);
             display: inline-block;
-            width: 3.5vh;
+            width: 3.7vh;
             height: 3vh;
             margin-left: -1vh;
             border-radius: 2vh;
-            padding-top: 0.4vh;
-            font-size: 2vh;
+            padding-top: 0.7vh;
+            font-size: .8em;
             @include for-device(
                 $device_list: (
                     tablet-portrait-up,
@@ -98,7 +96,7 @@ ol {
         }
         i {
             margin: 4vh;
-            font-size: 3vh;
+            font-size: map-get($map: $taille-de-base-txt, $key:normale );
             color: grey;
             @include for-device(
                 $device_list: (

@@ -3,7 +3,7 @@
     background-color: map-get($map: $couleurs, $key: Fond);
     p {
         margin: 0 1vh;
-        font-size: 2.5vh;
+        font-size: map-get($taille-de-base-txt,normale);
         font-weight: 300;
     }
 
@@ -14,9 +14,9 @@
         }
         input {
             text-align: center;
-            padding: 2.4vh;
+            padding: 2.6vh;
             width: 100%;
-            font-size: 2.4vh;
+            font-size: map-get($taille-de-base-txt,normale);
             background: darken(map-get($map: $couleurs, $key: Fond), 4%);
             box-shadow: inset 0px 10px 10px -14px;
             border: none;
@@ -34,6 +34,6 @@
 
     h1 {
         margin: 6vh 6vh 1vh;
-        font-size: 3.7vh;
+        font-size: map-get($taille-de-base-txt,titres);
     }
 }
