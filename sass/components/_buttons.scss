@@ -10,7 +10,7 @@
     border-radius: 4vh;
     cursor: pointer;
     @include box-shadow(map-get($ombres, Normales));
-    &:active {
+    &:hover {
         opacity: 0.8;
         @include box-shadow(map-get($ombres, Sombres));
     }
