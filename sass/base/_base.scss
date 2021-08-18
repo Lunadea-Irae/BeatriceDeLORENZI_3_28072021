@@ -22,7 +22,7 @@ input[type="checkbox"] {
     animation: chargement 1.5s ease-in-out;
     animation-fill-mode: forwards;
     background-color: map-get($couleurs, Blanc);
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 1;
